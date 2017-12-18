@@ -20,12 +20,13 @@ if (command === "my-tweets") {
     response
   ) {
     if (!error) {
-      // console.log(tweets);
-      // console.log(JSON.parse(response));  // Raw response object.
-      console.log(JSON.parse(tweets));
+      for(var i = 0; i<20; i++){
+        console.log(tweets[i].text);        
+      }
     }
   });
 } else if (command === "spotify-this-song") {
+  
 
 } else if (command === "movie-this") {
   var movieName = process.argv[3];

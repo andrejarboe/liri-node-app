@@ -26,8 +26,11 @@ function myTweets() {
   ) {
     if (!error) {
       for (var i = 0; i < 20; i++) {
-        console.log(tweets[i].text);
+        console.log(tweets[i].text + " "+tweets[i].user.created_at);
+        
       }
+      // console.log(tweets[0]);
+      
     }
   });
 }
@@ -60,7 +63,7 @@ function movieThis() {
   if (!input) {
     input = "Mr. Nobody";
   }
-  
+
   var queryUrl =
     "http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=trilogy";
 
@@ -96,7 +99,7 @@ function doWhatItSays() {
     input = output[1];
 
     runCommand(command);
-;   
+
   });
 }
 

@@ -3,6 +3,7 @@ var twitter = require("twitter");
 var request = require("request");
 var Spotify = require("node-spotify-api");
 
+
 var keys = require("./keys.js");
 
 var command = process.argv[2];
@@ -28,6 +29,7 @@ if (command === "my-tweets") {
   });
 } else if (command === "spotify-this-song") {
   var songName = process.argv[3];
+  var artist = "";
 
   var spotify = new Spotify({
     id: "c4b43d807d6446e283c8bd1668080d02",
@@ -35,18 +37,17 @@ if (command === "my-tweets") {
   });
 
   if(!songName){
-    songName = "The Sign";
+    songName = "The Sign Ace of Base";
+    artist = "Ace of Base";
   }
 
-  spotify.search({ type: "track", query: songName }, function(
+  spotify.search({ type: "track", query: songName}, function(
     err,
     data
   ) {
     if (err) {
       return console.log("Error occurred: " + err);
     }
-
-    console.log(JSON.stringify(data));
     
     console.log("Artist(s): " +data.tracks.items[0].album.artists[0].name);
     console.log("The song's name: " +data.tracks.items[0].name);
@@ -80,4 +81,5 @@ if (command === "my-tweets") {
     }
   });
 } else if (command === "do-what-it-says") {
+
 }

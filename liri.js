@@ -34,7 +34,6 @@ function myTweets() {
 
 //spotify search function
 function spotifySearch() {
-  var artist = "";
 
   var spotify = new Spotify({
     id: "c4b43d807d6446e283c8bd1668080d02",
@@ -58,6 +57,10 @@ function spotifySearch() {
 }
 
 function movieThis() {
+  if (!input) {
+    input = "Mr. Nobody";
+  }
+  
   var queryUrl =
     "http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=trilogy";
 

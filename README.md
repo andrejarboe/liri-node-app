@@ -13,7 +13,7 @@ cd into the directory and run: node liri.js "command" "search term"
 commands are:
    * `my-tweets`
 
-   * `spotify-this-song` "song goes here"
+   * `spotify-this-song "song goes here"`
 
    * `movie-this "movie goes here"`
 
